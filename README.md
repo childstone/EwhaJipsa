@@ -2,6 +2,8 @@
 
 ## 10월 20일까지 개발 완료
 
+## 절대절대절대 main branch를 건드리지 마. checkout을 하지도 말고 매주 개발 끝나고 합칠 때에만!!! merge 후에 접근할 수 있다. 절대절대절대 건드리지마.
+
 Scene 1,2,4 -> 현
 Scene 3, gamemanager 관리 -> 삼돌
 
