@@ -6,6 +6,10 @@ public class Clothes : MonoBehaviour
 {
     [SerializeField]private int clothesSet;
 
+    public int GetClothesSet(){
+        return clothesSet;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
