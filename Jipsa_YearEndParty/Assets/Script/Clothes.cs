@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class ChScene1 : MonoBehaviour
+public class Clothes : MonoBehaviour
 {
+    [SerializeField]private int clothesSet;
 
-    public void SceneChange()
-    {
-        SceneManager.LoadScene("Scene1");
+    public int GetClothesSet(){
+        return clothesSet;
     }
+
     // Start is called before the first frame update
     void Start()
     {
