@@ -10,7 +10,11 @@ public class Pointer : MonoBehaviour
     private Collider2D objectCollider;
     public int valueOfClothesSet;
     private int count=0;
+    public GameObject sceneChange;
 
+    public int getCount(){
+        return count;
+    }
 
 // Trigger 충돌 감지 함수
      void OnTriggerEnter2D(Collider2D other)
@@ -42,16 +46,17 @@ public class Pointer : MonoBehaviour
         }
     }
 
-    void Awake(){
-         // 이 스크립트가 붙은 오브젝트의 Collider 컴포넌트를 가져옴
-        objectCollider = GetComponent<Collider2D>();
+        // Coroutine으로 3초 기다린 후 실행
+    private IEnumerator DelayAction()
+    {
+        // 3초 대기
+        yield return new WaitForSeconds(3f);
 
-        // Collider가 있는지 확인
-        if (objectCollider != null)
-        {
-            // Collider가 존재하면, 처음에 isTrigger를 꺼둠
-            objectCollider.isTrigger = false;
-        }
+        if (count<4)
+                isMoving = true;
+            else
+                sceneChange.GetComponent<ChScene4>().SceneChange();
+
     }
 
     void Update()
@@ -60,12 +65,12 @@ public class Pointer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isMoving = !isMoving;
-            objectCollider.isTrigger = true;
-
              // 현재 clothesSet 값을 GameManager에 저장
             GameManager.Instance.setCurrentClothesSet(count,valueOfClothesSet); 
             
             count++;
+            
+            StartCoroutine(DelayAction());
         }
 
 

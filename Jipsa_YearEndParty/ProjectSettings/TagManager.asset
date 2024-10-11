@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Top
   - pointer
+  - Bottom
   layers:
   - Default
   - TransparentFX

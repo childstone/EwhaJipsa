@@ -17,6 +17,7 @@ public class ClothesManager : MonoBehaviour
         if (index >= 0 && index < clothesPrefabs.Count)
         {
             Instantiate(clothesPrefabs[index], transform.position, Quaternion.identity);
+            Debug.Log("인스턴스화");
         }
         else
         {
