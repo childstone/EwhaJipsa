@@ -18,12 +18,8 @@ public class ScoreShow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(IncrementScore(100));        
-    }
-
-    void update()
-    {
-        UpdateScoreText();
+        StartCoroutine(IncrementScore(100));
+        UpdateScoreText();        
     }
 
     IEnumerator IncrementScore(int targetScore)
