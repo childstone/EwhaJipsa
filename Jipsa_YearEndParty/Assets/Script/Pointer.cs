@@ -9,41 +9,67 @@ public class Pointer : MonoBehaviour
     private int direction = 1; // 이동 방향 (1: 오른쪽, -1: 왼쪽)
     private Collider2D objectCollider;
     public int valueOfClothesSet;
+    private int count=0;
+    public GameObject sceneChange;
+    public GameObject [] visible = new GameObject[4];
+
+    public int getCount(){
+        return count;
+    }
 
 // Trigger 충돌 감지 함수
-    void OnTriggerEnter2D(Collider2D other)
+     void OnTriggerEnter2D(Collider2D other)
     {
-        // 충돌한 오브젝트의 태그가 "Top"인지 확인
-        if (other.gameObject.tag == "Top")
+
+        if(other ==null)
+            Debug.Log("null입니다");
+        // 충돌한 오브젝트의 태그가 "ClothesChoice"인지 확인
+        if (other.gameObject.CompareTag("ClothesChoice"))
         {
-            Debug.Log("Top 태그를 가진 오브젝트와 Trigger 충돌했습니다.");
-            // 여기에 충돌 시 실행할 코드를 작성하세요.
-            Clothes otherScript = other.gameObject.GetComponent<Clothes>();
+
+            // Clothes 컴포넌트를 가져옴
+            Choice otherScript = other.gameObject.GetComponent<Choice>();
 
             // 컴포넌트가 존재하는지 확인
             if (otherScript != null)
             {
                 // 변수 A의 값을 가져옴
-                valueOfClothesSet = otherScript.GetClothesSet();
-                Debug.Log("충돌한 오브젝트의 A 값: " + valueOfClothesSet);
+                valueOfClothesSet = otherScript.GetChoiceClothesSet();
+                Debug.Log("충돌한 오브젝트의 clothesSet 값: " + valueOfClothesSet);
 
                 // 가져온 값을 사용하여 원하는 동작을 수행할 수 있음
             }
-
+            else
+            {
+                Debug.LogWarning("충돌한 오브젝트에 Clothes 컴포넌트가 없습니다.");
+            }
         }
     }
 
-    void Awake(){
-         // 이 스크립트가 붙은 오브젝트의 Collider 컴포넌트를 가져옴
-        objectCollider = GetComponent<Collider2D>();
-
-        // Collider가 있는지 확인
-        if (objectCollider != null)
-        {
-            // Collider가 존재하면, 처음에 isTrigger를 꺼둠
-            objectCollider.isTrigger = false;
+    void Start(){
+         for(int i=0; i<4; i++){
+            visible[i].SetActive(false);
         }
+
+        visible[0].SetActive(true);
     }
+
+        // Coroutine으로 3초 기다린 후 실행
+    private IEnumerator DelayAction()
+    {
+        // 3초 대기
+        yield return new WaitForSeconds(3f);
+
+        isMoving = true;
+    }
+
+    public void VisibleControl(int count)
+    {
+        visible[count].SetActive(true);
+        visible[(count-1)].SetActive(false);
+    }
+
+    
 
     void Update()
     {
@@ -51,9 +77,20 @@ public class Pointer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isMoving = !isMoving;
-            objectCollider.isTrigger = true;
-            
+             // 현재 clothesSet 값을 GameManager에 저장
+            GameManager.Instance.setCurrentClothesSet(count,valueOfClothesSet); 
+
+            if(count<3){
+                count++;
+                VisibleControl(count);
+            }         
+            else
+                sceneChange.GetComponent<ChScene4>().SceneChange();
+
+
+            StartCoroutine(DelayAction());
         }
+
 
         // 오브젝트가 이동 중일 때만 좌우로 움직임
          if (isMoving)

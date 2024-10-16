@@ -4,21 +4,11 @@ using UnityEngine;
 
 public class Clothes : MonoBehaviour
 {
-    [SerializeField]private int clothesSet;
-
-    public int GetClothesSet(){
+    [SerializeField] private int clothesSet; // 의상 세트 번호
+    // 의상 세트 번호를 반환하는 메서드
+    public int GetClothesSet()
+    {
         return clothesSet;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
