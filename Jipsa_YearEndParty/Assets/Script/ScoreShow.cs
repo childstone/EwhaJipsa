@@ -3,24 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class ScoreShow : MonoBehaviour
 {
-    public Text scoreText;
+    public TextMeshProUGUI scoreText;
     private int score = 0;
     
     void Awake()
     {
-        scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
+       
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(IncrementScore(100));
-        UpdateScoreText();        
+        StartCoroutine(IncrementScore(100));        
     }
 
+    void update()
+    {
+        UpdateScoreText();
+    }
 
     IEnumerator IncrementScore(int targetScore)
     {
