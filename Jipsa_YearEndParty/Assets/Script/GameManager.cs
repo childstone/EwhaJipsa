@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
         currentClothesSet[count] = value;
     }
 
+    public int[] getCurrentClothesSet(){
+        return currentClothesSet;
+    }
+
     private void Awake()
     {
         // 중복된 GameManager가 생성되지 않도록 설정

@@ -54,11 +54,11 @@ public class Pointer : MonoBehaviour
         visible[0].SetActive(true);
     }
 
-        // Coroutine으로 3초 기다린 후 실행
+        // Coroutine으로 1초 기다린 후 실행
     private IEnumerator DelayAction()
     {
         // 3초 대기
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
 
         isMoving = true;
     }
