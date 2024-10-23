@@ -17,7 +17,7 @@ public class SceneController : MonoBehaviour
         Bubble.SetActive(false);
         Button.SetActive(false);
 
-        Invoke("ShowResult", 5f);  //scene4°¡ ·ÎµåµÈ ÈÄ 5ÃÊ µÚ¿¡ È£Ãâ
+        Invoke("ShowResult", 5f);  //scene4ï¿½ï¿½ ï¿½Îµï¿½ï¿½ ï¿½ï¿½ 5ï¿½ï¿½ ï¿½Ú¿ï¿½ È£ï¿½ï¿½
     }
 
     void ShowResult()
@@ -44,10 +44,10 @@ public class SceneController : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(0.5f); //0.5ÃÊ ´ë±â
+        yield return new WaitForSeconds(0.5f); //0.5ï¿½ï¿½ ï¿½ï¿½ï¿½
         Bubble.SetActive(true);
 
-        yield return new WaitForSeconds(2.0f); //2ÃÊ ´ë±â
-        Button.SetActive(true); //Ã³À½À¸·Î ¹öÆ° È°¼ºÈ­
+        yield return new WaitForSeconds(2.0f); //2ï¿½ï¿½ ï¿½ï¿½ï¿½
+        Button.SetActive(true); //Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° È°ï¿½ï¿½È­
     }
 }

@@ -18,7 +18,11 @@ public class FlowManager : MonoBehaviour
     {
         //모든 오브젝트 비활성화
         EndingManager.SetActive(false);
-        Endings.SetActive(false);
+        //엔딩 오브젝트의 자식 오브젝트를 비활성화
+        foreach (Transform child in Endings.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
         GetDressed.SetActive(false);
         defaultMan.SetActive(false);
     }
@@ -40,6 +44,7 @@ public class FlowManager : MonoBehaviour
         // GetDressed 작업 완료 후 대기 (여기서는 1초 대기)
         yield return new WaitForSeconds(1f); // 이 부분은 실제로 비동기 작업이 끝날 때까지 대기할 수 있습니다.
 
+        EndingManager.SetActive(true);
         // 그 이후 순서들 ... 
     }
 }
