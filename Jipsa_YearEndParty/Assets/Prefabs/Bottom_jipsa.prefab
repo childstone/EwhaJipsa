@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1310618047, guid: 0e8688bca3c19924e8648230703b359e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e79e1407547e69c48b6c2ab6aa41fbff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,7 +100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clothesSet: 0
-  prefabs: {fileID: 0}
 --- !u!50 &3501808743849137429
 Rigidbody2D:
   serializedVersion: 4
@@ -139,7 +138,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.7999997, y: 4.8046875}
+    oldSize: {x: 6.67, y: 11.36}
     newSize: {x: 4.7999997, y: 4.8046875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
