@@ -883,7 +883,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -123763580, guid: 953bc03e05c89d646b41cadbf963ff85, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a10c4746dfa7a194eaebc6ec0ca66589, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1564,7 +1564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 885503435876480808, guid: 66860f0c8ac3c0a459d091a41d8ad0b2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.29094532
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 885503435876480808, guid: 66860f0c8ac3c0a459d091a41d8ad0b2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1598,6 +1598,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 885503435876480809, guid: 66860f0c8ac3c0a459d091a41d8ad0b2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 12dca3b2c828ea949be229ef41d7d1f7, type: 3}
     - target: {fileID: 885503435876480811, guid: 66860f0c8ac3c0a459d091a41d8ad0b2, type: 3}
       propertyPath: m_Name
       value: Top_jipsa
@@ -2391,7 +2395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6539739521885241550, guid: e2b2c174a131cc04f94dfe9ce26e31b1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.14634877
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 6539739521885241550, guid: e2b2c174a131cc04f94dfe9ce26e31b1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2510,7 +2514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3604773428914126476, guid: d8cc8b0a556b81547960fcde2dda9975, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.14634877
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3604773428914126476, guid: d8cc8b0a556b81547960fcde2dda9975, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2633,7 +2637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2660407766679615525, guid: 3a1c09f7359dd5a439d4d227158564ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8919473
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2660407766679615525, guid: 3a1c09f7359dd5a439d4d227158564ad, type: 3}
       propertyPath: m_LocalPosition.z

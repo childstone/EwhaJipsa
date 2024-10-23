@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -123763580, guid: 953bc03e05c89d646b41cadbf963ff85, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a10c4746dfa7a194eaebc6ec0ca66589, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,4 +98,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clothesSet: 0
-  prefabs: {fileID: 0}
