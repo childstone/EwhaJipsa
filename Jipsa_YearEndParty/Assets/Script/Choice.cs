@@ -12,6 +12,5 @@ public class Choice : MonoBehaviour
     }
 
     void Start(){
-        Debug.Log(choiceClothesSet);
     }
 }
