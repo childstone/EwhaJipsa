@@ -13,8 +13,10 @@ public class SceneController : MonoBehaviour
     public GameObject Image2;
     public GameObject Bubble1;
     public GameObject Bubble2;
+    public GameObject Bubble3;
     public TMP_Text React1;
-    public TMP_Text React2; 
+    public TMP_Text React2;
+    public TMP_Text React3;
     public Light spotlight;
     public GameObject Button;
 
@@ -27,6 +29,8 @@ public class SceneController : MonoBehaviour
         React1.gameObject.SetActive(false);
         Bubble2.SetActive(false);
         React2.gameObject.SetActive(false);
+        Bubble3.SetActive(false);
+        React3.gameObject.SetActive(false);
 
         Button.SetActive(false);
 
@@ -48,8 +52,7 @@ public class SceneController : MonoBehaviour
         switch(num)
         {
             case 0:
-                React1.text = "집사 1입니다.";
-                React2.text = "대사 2입니다.";
+                StartCoroutine(ShowDialogue4());
                 break;
             case 1:
                 React1.text = "머슴 1입니다.";
@@ -95,12 +98,75 @@ public class SceneController : MonoBehaviour
         }
 
 
-        StartCoroutine(FadeIn());
     }
 
-    private IEnumerator FadeIn()
+    private IEnumerator ShowDialogue1()
     {
-        float duration = 1.0f;
+        // 대사 1
+        React1.text = "뭐지...?\n이 옷을 입고 나서부터...";
+        Bubble1.SetActive(true);
+        React1.gameObject.SetActive(true);
+
+        yield return Delay(); // 대사 1 후 대기
+
+        // 대사 2
+        React2.text = "계속 무언가를 찾고 있다...";
+        Bubble2.SetActive(true);
+        React2.gameObject.SetActive(true);
+
+        yield return Delay(); // 대사 2 후 대기
+
+        Button.SetActive(true); // 버튼 활성화
+    }
+
+    private IEnumerator ShowDialogue4()
+    {
+        Image1.SetActive(true);
+        Image2.SetActive(true);
+
+        yield return Delay(); 
+        // 대사 1
+        React1.text = "오오... 전하...";
+        Bubble1.SetActive(true);
+        React1.gameObject.SetActive(true);
+
+        yield return Delay(); // 대사 1 후 대기
+
+        Bubble1.SetActive(false);
+        yield return Delay(); // 대사 1 후 대기
+
+        React1.text = "연말 파티로 향하시어";
+        Bubble1.SetActive(true);
+        React1.gameObject.SetActive(true);
+        yield return Delay(); // 대사 1 후 대기
+
+
+        // 대사 2
+
+        React2.text = "세상에 이화의 이름을 드높여주시옵소서...";
+        Bubble2.SetActive(true);
+        React2.gameObject.SetActive(true);
+
+        yield return Delay(); // 대사 2 후 대기
+
+        React3.text = "암 그러도록 하지.";
+        Bubble3.SetActive(true);
+        React3.gameObject.SetActive(true);
+
+        yield return Delay(); // 대사 2 후 대기
+
+        React1.text = "만세~";
+        React2.text = "만세~.";
+
+
+        Button.SetActive(true); // 버튼 활성화
+    }
+
+
+
+    private IEnumerator Delay()
+    {
+        /*float duration = 1.0f;
         float elapsed = 0.0f;
 
         while (elapsed < duration)
@@ -127,7 +193,9 @@ public class SceneController : MonoBehaviour
         React2.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(2.0f); //2�� ���
-        Button.SetActive(true); //ó������ ��ư Ȱ��ȭ
+        Button.SetActive(true); //ó������ ��ư Ȱ��ȭ*/
+
+        yield return new WaitForSeconds(2f); //2초 기다리기
     }
 
 
