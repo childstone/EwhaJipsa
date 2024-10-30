@@ -14,7 +14,7 @@ public class SceneController : MonoBehaviour
     public GameObject Bubble1;
     public GameObject Bubble2;
     public TMP_Text React1;
-    public TMP_Text React2;
+    public TMP_Text React2; 
     public Light spotlight;
     public GameObject Button;
 
@@ -30,28 +30,39 @@ public class SceneController : MonoBehaviour
 
         Button.SetActive(false);
 
-        Invoke("ShowResult", 5f);  //scene4�� �ε�� �� 5�� �ڿ� ȣ��
+        Invoke("ShowResultWrapper", 5f);  //scene4�� �ε�� �� 5�� �ڿ� ȣ��
+    }
+    
+    void ShowResultWrapper()
+    {
+         //ClothesSet load from GameManager
+        int [] clothesSet = GameManager.Instance.getCurrentClothesSet();
+        ShowResult(clothesSet);
     }
 
-    void ShowResult()
+    void ShowResult(int [] clothesSet)
     {
         Image.SetActive(true);
-        int num = 0;
+        int num = FindNum(clothesSet);;
 
         switch(num)
         {
+            case 0:
+                React1.text = "집사 1입니다.";
+                React2.text = "대사 2입니다.";
+                break;
             case 1:
-                React1.text = "대사 1입니다.";
+                React1.text = "머슴 1입니다.";
                 React2.text = "대사 2입니다.";
                 break;
 
             case 2:
-                React1.text = "대사 1입니다.";
+                React1.text = "대학 1입니다.";
                 React2.text = "대사 2입니다.";
                 break;
 
             case 3:
-                React1.text = "대사 1입니다.";
+                React1.text = "거지 1입니다.";
                 React2.text = "대사 2입니다.";
                 break;
 
@@ -71,26 +82,6 @@ public class SceneController : MonoBehaviour
                 break;
 
             case 7:
-                React1.text = "대사 1입니다.";
-                React2.text = "대사 2입니다.";
-                break;
-
-            case 8:
-                React1.text = "대사 1입니다.";
-                React2.text = "대사 2입니다.";
-                break;
-
-            case 9:
-                React1.text = "대사 1입니다.";
-                React2.text = "대사 2입니다.";
-                break;
-
-            case 10:
-                React1.text = "대사 1입니다.";
-                React2.text = "대사 2입니다.";
-                break;
-
-            case 11:
                 React1.text = "대사 1입니다.";
                 React2.text = "대사 2입니다.";
                 break;
@@ -138,4 +129,31 @@ public class SceneController : MonoBehaviour
         yield return new WaitForSeconds(2.0f); //2�� ���
         Button.SetActive(true); //ó������ ��ư Ȱ��ȭ
     }
+
+
+     public int FindNum(int [] clothesSet){
+        int max=0;
+        int answer=0;
+        int [] count = new int[5];
+
+        for(int i=0; i<clothesSet.Length; i++){
+            count[clothesSet[i]]++;
+
+            if(max<count[clothesSet[i]]){
+                max=count[clothesSet[i]];
+                answer=clothesSet[i];
+            }
+        }
+
+        if(max==4){
+            return answer;
+        }
+        else{
+            return max+4;
+        }
+
+
+    }
+
+
 }
