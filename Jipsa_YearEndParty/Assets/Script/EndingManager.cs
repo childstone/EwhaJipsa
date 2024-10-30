@@ -8,6 +8,8 @@ public class EndingManager : MonoBehaviour
     public GameObject Endings;
     bool isTrueEnding;
 
+    public int val;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +44,7 @@ public class EndingManager : MonoBehaviour
         */
     }
 
-    int FindNum(int [] clothesSet){
+    public int FindNum(int [] clothesSet){
         int max=0;
         int answer=0;
         int [] count = new int[5];
@@ -58,9 +60,11 @@ public class EndingManager : MonoBehaviour
 
         if(max==4){
             isTrueEnding=true;
+            val = answer;
             return answer;
         }
         else{
+            val = max;
             return max;
         }
 
