@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EndingA: MonoBehaviour
+public class Ending1: MonoBehaviour
 {
 
     // Update is called once per frame
