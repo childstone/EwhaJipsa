@@ -11,11 +11,8 @@ public class Pointer : MonoBehaviour
     public int valueOfClothesSet;
     private int count=0;
     public GameObject sceneChange;
-    public GameObject [] visible = new GameObject[4];
-
-    public int getCount(){
-        return count;
-    }
+    public GameObject selected; //하단에 선택된 옷들
+    public GameObject [] visible = new GameObject[4]; //슬롯머신 바디 안에
 
 // Trigger 충돌 감지 함수
      void OnTriggerEnter2D(Collider2D other)
@@ -35,9 +32,6 @@ public class Pointer : MonoBehaviour
             {
                 // 변수 A의 값을 가져옴
                 valueOfClothesSet = otherScript.GetChoiceClothesSet();
-                Debug.Log("충돌한 오브젝트의 clothesSet 값: " + valueOfClothesSet);
-
-                // 가져온 값을 사용하여 원하는 동작을 수행할 수 있음
             }
             else
             {
@@ -47,10 +41,13 @@ public class Pointer : MonoBehaviour
     }
 
     void Start(){
-         for(int i=0; i<4; i++){
-            visible[i].SetActive(false);
+         foreach(GameObject obj in visible){
+            obj.SetActive(false);
         }
-
+        for (int i = 0; i < selected.transform.childCount; i++)
+        {
+            selected.transform.GetChild(i).gameObject.SetActive(false);
+        }
         visible[0].SetActive(true);
     }
 
@@ -59,28 +56,8 @@ public class Pointer : MonoBehaviour
     {
         // 3초 대기
         yield return new WaitForSeconds(1f);
-
-        isMoving = true;
-    }
-
-    public void VisibleControl(int count)
-    {
-        visible[count].SetActive(true);
-        visible[(count-1)].SetActive(false);
-    }
-
-    
-
-    void Update()
-    {
-        // 스페이스바 입력을 감지하여 이동/멈춤을 토글
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            isMoving = !isMoving;
-             // 현재 clothesSet 값을 GameManager에 저장
-            GameManager.Instance.setCurrentClothesSet(count,valueOfClothesSet); 
-
-            if(count<3){
+        Debug.Log("DelayAction 코루틴이 완료되었습니다.");
+        if(count<3){
                 count++;
                 VisibleControl(count);
             }         
@@ -88,7 +65,50 @@ public class Pointer : MonoBehaviour
                 sceneChange.GetComponent<ChScene4>().SceneChange();
 
 
+            isMoving = true;
+    }
+
+        //현재 옷을 없애고 다음 옷이 보이도록 함
+    public void VisibleControl(int count)
+    {
+        visible[count].SetActive(true);
+        visible[(count-1)].SetActive(false);
+    }
+
+    void SaveClothesSet(){
+         isMoving = !isMoving;
+             // 현재 clothesSet 값을 GameManager에 저장
+            GameManager.Instance.setCurrentClothesSet(count,valueOfClothesSet); 
+             // 아래에 선택한 옷을 보여줌
+            ShowSelectedClothes(count);
+
             StartCoroutine(DelayAction());
+    }
+
+        //선택한 옷 하단에 보여주기
+    void ShowSelectedClothes(int count){
+        selected.transform.GetChild(count).gameObject.SetActive(true);
+    }
+
+    void Update()
+    {
+        // 스페이스바 입력을 감지하여 이동/멈춤을 토글
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+           SaveClothesSet();
+        }
+
+        //마우스 클릭을 감지하여 해당하는 위치에 있는 오브젝트 리턴
+        if(Input.GetMouseButtonDown(0)){
+            //마우스 클릭한 좌표값 가져오기
+            Vector2 pos=Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //해당 좌표에 있는 오브젝트 찾기
+            RaycastHit2D hit=Physics2D.Raycast(pos,Vector2.zero, 0f);
+
+            if(hit.collider!=null && hit.collider.gameObject.tag == "Lever"){
+                GameObject click_obj=hit.transform.gameObject;
+                SaveClothesSet();
+            }
         }
 
 
