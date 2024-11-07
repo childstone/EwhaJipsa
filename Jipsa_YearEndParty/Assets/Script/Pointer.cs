@@ -56,7 +56,6 @@ public class Pointer : MonoBehaviour
     {
         // 3초 대기
         yield return new WaitForSeconds(1f);
-        Debug.Log("DelayAction 코루틴이 완료되었습니다.");
         if(count<3){
                 count++;
                 VisibleControl(count);
@@ -75,7 +74,7 @@ public class Pointer : MonoBehaviour
         visible[(count-1)].SetActive(false);
     }
 
-    void SaveClothesSet(){
+    public void SaveClothesSet(){
          isMoving = !isMoving;
              // 현재 clothesSet 값을 GameManager에 저장
             GameManager.Instance.setCurrentClothesSet(count,valueOfClothesSet); 
@@ -92,26 +91,6 @@ public class Pointer : MonoBehaviour
 
     void Update()
     {
-        // 스페이스바 입력을 감지하여 이동/멈춤을 토글
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-           SaveClothesSet();
-        }
-
-        //마우스 클릭을 감지하여 해당하는 위치에 있는 오브젝트 리턴
-        if(Input.GetMouseButtonDown(0)){
-            //마우스 클릭한 좌표값 가져오기
-            Vector2 pos=Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            //해당 좌표에 있는 오브젝트 찾기
-            RaycastHit2D hit=Physics2D.Raycast(pos,Vector2.zero, 0f);
-
-            if(hit.collider!=null && hit.collider.gameObject.tag == "Lever"){
-                GameObject click_obj=hit.transform.gameObject;
-                SaveClothesSet();
-            }
-        }
-
-
         // 오브젝트가 이동 중일 때만 좌우로 움직임
          if (isMoving)
         {
