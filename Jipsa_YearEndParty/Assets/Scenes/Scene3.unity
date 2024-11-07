@@ -392,8 +392,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375276656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4, y: -2.84, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalPosition: {x: 0.3, y: -3.2, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 856184946}
@@ -412,11 +412,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 12dca3b2c828ea949be229ef41d7d1f7, type: 3}
+  - {fileID: 21300000, guid: 4d93e5bb462aa11408c24dc068fcf33a, type: 3}
   - {fileID: 21300000, guid: 2656707d94a4b374ea9bc06489037aa8, type: 3}
   - {fileID: 21300000, guid: 87af2fdccbb67434aab7f2238fd2fe3c, type: 3}
-  - {fileID: 21300000, guid: eb17aeb40e4ed4d48bb4109e968a001f, type: 3}
-  - {fileID: 21300000, guid: 1e63e1b3f7fe74e47a813fcfd57a5847, type: 3}
+  - {fileID: 21300000, guid: 8413d7a1e7b31f1468b798be38dabd66, type: 3}
+  - {fileID: 21300000, guid: 2ff9707ab811f1b438cc0f1a623d4a9e, type: 3}
   order: 1
 --- !u!212 &375276659
 SpriteRenderer:
@@ -1875,8 +1875,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410798366}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.5, y: -1.7, z: 0}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
+  m_LocalPosition: {x: 3.47, y: -1.75, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 856184946}
@@ -1895,11 +1895,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: e79e1407547e69c48b6c2ab6aa41fbff, type: 3}
-  - {fileID: 21300000, guid: 6c3b072989e443e48a9d5fe43f6edfc1, type: 3}
-  - {fileID: 21300000, guid: 28486e1960bed08409a737227e84f5d4, type: 3}
-  - {fileID: 21300000, guid: b8293b6416f94024fa5a93b211ce628f, type: 3}
-  - {fileID: 21300000, guid: bb31090d10c7e454e91c34359dc7e61d, type: 3}
+  - {fileID: 21300000, guid: 964c1bfea397044409616a46ea83aba7, type: 3}
+  - {fileID: 21300000, guid: 1fcc250ab6da2fc468e40f0b2036e8ee, type: 3}
+  - {fileID: 21300000, guid: de40d21a2ba8ace4290ede5bdddc30fa, type: 3}
+  - {fileID: 21300000, guid: ac272d34d9dc0d44a97d66d8bd56506e, type: 3}
+  - {fileID: 21300000, guid: 9bd9f8b32f50f33479309af585c1d532, type: 3}
   order: 2
 --- !u!212 &1410798369
 SpriteRenderer:
@@ -2328,7 +2328,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e624ebd64f6f0334b85f7b33ce37c8bb, type: 3}
   - {fileID: 21300000, guid: afdb5fe833e2d01459c9d802bd63d185, type: 3}
   - {fileID: 21300000, guid: 1d381f098619fb14b8e8f4d6ed997740, type: 3}
-  - {fileID: 21300000, guid: ddb85785496f2fc4ab1d4d430fc10286, type: 3}
+  - {fileID: 21300000, guid: a79034063ca6c274d89931fab9d5ef47, type: 3}
   order: 0
 --- !u!212 &1734630685
 SpriteRenderer:
