@@ -7,6 +7,29 @@ using TMPro;
 
 public class ScoreShow : MonoBehaviour
 {
+    public int FindNum(int [] clothesSet){
+        int max=0;
+        int answer=0;
+        int [] count = new int[5];
+
+        for(int i=0; i<clothesSet.Length; i++){
+            count[clothesSet[i]]++;
+
+            if(max<count[clothesSet[i]]){
+                max=count[clothesSet[i]];
+                answer=clothesSet[i];
+            }
+        }
+
+        if(max==4){
+            return answer;
+        }
+        else{
+            return max+4;
+        }
+
+
+    }
     public TextMeshProUGUI scoreText;
     private int score = 0;
     
@@ -16,9 +39,41 @@ public class ScoreShow : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    IEnumerator Start()
     {
-        StartCoroutine(IncrementScore(100));
+        int[] clothesSet = GameManager.Instance.getCurrentClothesSet();
+        int num = FindNum(clothesSet);
+        switch (num) { 
+            case 0:
+                yield return StartCoroutine(IncrementScore(100));
+                break;
+
+            case 1:
+                yield return StartCoroutine(IncrementScore(100));
+                break;
+            case 2:
+                yield return StartCoroutine(IncrementScore(100));
+                break;
+            case 3:
+                yield return StartCoroutine(IncrementScore(100));
+                break;
+            case 4:
+                yield return StartCoroutine(IncrementScore(100));
+                break;
+
+            case 5: //1개만 맞을 경우
+                StartCoroutine(IncrementScore(20));
+                break;
+
+            case 6: //2개 맞을 경우
+                StartCoroutine(IncrementScore(50));
+                break;
+
+            case 7: //3개 맞을 경우
+                StartCoroutine(IncrementScore(80));
+                break;
+        }
+        
         UpdateScoreText();        
     }
 
@@ -33,8 +88,16 @@ public class ScoreShow : MonoBehaviour
         
     }
 
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(2f);
+    }
+
+
     void UpdateScoreText()
     {
         scoreText.text = score.ToString();
     }
+
+
 }
