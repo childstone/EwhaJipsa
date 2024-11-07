@@ -90,23 +90,28 @@ public class SceneController : MonoBehaviour
                 React1.text = "이러고 나갈 순 없어...";
                 Bubble1.SetActive(true);
                 React1.gameObject.SetActive(true);
+                Button.SetActive(true); // 버튼 활성화
                 break;
 
             case 6:
                 React1.text = "조금 애매하네...";
                 Bubble1.SetActive(true);
                 React1.gameObject.SetActive(true);
+                Button.SetActive(true); // 버튼 활성화
                 break;
 
             case 7:
                 React1.text = "조금 더 신경쓰면 괜찮을 것 같아.";
                 Bubble1.SetActive(true);
                 React1.gameObject.SetActive(true);
+                Button.SetActive(true); // 버튼 활성화
                 break;
 
             default:
-                React1.text = "초기 설정";
-                React2.text = "초기 설정";
+                React1.text = "공습경보!!공습경보!!";
+                React2.text = "버그발생!!버그발생!!!";
+                React1.gameObject.SetActive(true);
+                React2.gameObject.SetActive(true);
                 break;
 
 
@@ -291,8 +296,6 @@ public class SceneController : MonoBehaviour
         React3.text = "연말파티에 가려면 돈이 필요한데...";
         Bubble3.SetActive(true);
         React3.gameObject.SetActive(true);
-
-        yield return Delay(); // 대사 1 후 대기
         yield return Delay(); // 대사 1 후 대기
 
         Bubble3.SetActive(false);
@@ -313,8 +316,8 @@ public class SceneController : MonoBehaviour
         yield return Delay(); // 대사 2 후 대기
 
         React2.text = "옛다.";
-        Bubble3.SetActive(true);
-        React3.gameObject.SetActive(true);
+        Bubble2.SetActive(true);
+        React2.gameObject.SetActive(true);
 
         yield return Delay(); // 대사 2 후 대기
         yield return Delay(); // 대사 2 후 대기
