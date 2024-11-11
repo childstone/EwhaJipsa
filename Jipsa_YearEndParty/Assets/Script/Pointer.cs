@@ -14,6 +14,7 @@ public class Pointer : MonoBehaviour
     public GameObject sceneChange;
     public GameObject selected; //하단에 선택된 옷들
     public GameObject [] visible = new GameObject[4]; //슬롯머신 바디 안에
+    public ClickToStop clickto;
 
 // Trigger 충돌 감지 함수
      void OnTriggerEnter2D(Collider2D other)
@@ -33,7 +34,6 @@ public class Pointer : MonoBehaviour
             {
                 // 변수 A의 값을 가져옴
                 valueOfClothesSet = otherScript.GetChoiceClothesSet();
-                Debug.Log("지금"+valueOfClothesSet);
             }
             else
             {
@@ -78,6 +78,7 @@ public class Pointer : MonoBehaviour
                 sceneChange.GetComponent<ChScene4>().SceneChange();
 
             isMoving = true;
+            clickto.Click_flag=true;
     }
 
         //현재 옷을 없애고 다음 옷이 보이도록 함
@@ -89,6 +90,7 @@ public class Pointer : MonoBehaviour
 
     public void SaveClothesSet(){
         isMoving=false;
+        Debug.Log("gpgp");
         StartCoroutine(DelayAction());
     }
 

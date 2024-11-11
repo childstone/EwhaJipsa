@@ -41,5 +41,27 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioSource audioBgm;
     [SerializeField] AudioSource audioSfx;
 
+        // EBgm 열거형을 매개변수로 받아 해당하는 배경 음악 클립을 재생
+    public void PlayBGM(EBGM bgmIdx)
+    {
+      	//enum int형으로 형변환 가능
+        audioBgm.clip = bgms[(int)bgmIdx];
+        audioBgm.Play();
+    }
 
+    // 현재 재생 중인 배경 음악 정지
+    public void StopBGM()
+    {
+        audioBgm.Stop();
+    }
+
+    // ESfx 열거형을 매개변수로 받아 해당하는 효과음 클립을 재생
+    public void PlaySFX(ESFX esfx)
+    {
+        audioSfx.PlayOneShot(sfxs[(int)esfx]);
+    }
+    
+    void Start(){
+        PlayBGM(EBGM.MainBGM);
+    }
 }

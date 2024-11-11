@@ -1180,6 +1180,7 @@ MonoBehaviour:
   - {fileID: 1077028753}
   - {fileID: 866628458}
   - {fileID: 298541566}
+  clickto: {fileID: 946717218}
 --- !u!50 &782552810
 Rigidbody2D:
   serializedVersion: 4
@@ -1476,6 +1477,7 @@ MonoBehaviour:
   pointer: {fileID: 782552809}
   Lever: {fileID: 1058325554}
   Lever_Hover: {fileID: 555694073}
+  Click_flag: 1
 --- !u!1 &1001148836
 GameObject:
   m_ObjectHideFlags: 0

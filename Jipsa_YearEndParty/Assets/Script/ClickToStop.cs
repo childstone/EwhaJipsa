@@ -7,6 +7,7 @@ public class ClickToStop : MonoBehaviour
     public Pointer pointer;
     public GameObject Lever;
     public GameObject Lever_Hover;
+    public bool Click_flag=true;
 
     void Start()
     {
@@ -19,14 +20,18 @@ public class ClickToStop : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            pointer.SaveClothesSet();
-        }
+        if(Click_flag){
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                SoundManager.Instance.PlaySFX(SoundManager.ESFX.LEVER);
+                pointer.SaveClothesSet();
+            }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            DetectObjectUnderMouse();
+            if (Input.GetMouseButtonDown(0))
+            {
+                SoundManager.Instance.PlaySFX(SoundManager.ESFX.LEVER);
+                DetectObjectUnderMouse();
+            }
         }
     }
 
