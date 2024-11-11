@@ -5,7 +5,8 @@ using UnityEngine;
 public class Pointer : MonoBehaviour
 {
     public float speed; // 이동 속도
-    private bool isMoving = true; // 이동 여부
+    public bool isMoving = true; // 이동 여부
+    public bool flag = false; 
     private int direction = 1; // 이동 방향 (1: 오른쪽, -1: 왼쪽)
     private Collider2D objectCollider;
     public int valueOfClothesSet;
@@ -32,6 +33,7 @@ public class Pointer : MonoBehaviour
             {
                 // 변수 A의 값을 가져옴
                 valueOfClothesSet = otherScript.GetChoiceClothesSet();
+                Debug.Log("지금"+valueOfClothesSet);
             }
             else
             {
@@ -51,18 +53,29 @@ public class Pointer : MonoBehaviour
         visible[0].SetActive(true);
     }
 
-        // Coroutine으로 1초 기다린 후 실행
-    private IEnumerator DelayAction()
+    private IEnumerator DelayD()
     {
         // 3초 대기
         yield return new WaitForSeconds(1f);
+        SaveClothesSet();
+    }
+
+        // Coroutine으로 1초 기다린 후 실행
+    private IEnumerator DelayAction()
+    {
+        yield return new WaitForSeconds(1f);
+        // 현재 clothesSet 값을 GameManager에 저장
+        GameManager.Instance.setCurrentClothesSet(count,valueOfClothesSet); 
+            // 아래에 선택한 옷을 보여줌
+        ShowSelectedClothes(count);
+        // 3초 대기
+        yield return new WaitForSeconds(2f);
         if(count<3){
                 count++;
                 VisibleControl(count);
             }         
             else
                 sceneChange.GetComponent<ChScene4>().SceneChange();
-
 
             isMoving = true;
     }
@@ -75,13 +88,8 @@ public class Pointer : MonoBehaviour
     }
 
     public void SaveClothesSet(){
-         isMoving = !isMoving;
-             // 현재 clothesSet 값을 GameManager에 저장
-            GameManager.Instance.setCurrentClothesSet(count,valueOfClothesSet); 
-             // 아래에 선택한 옷을 보여줌
-            ShowSelectedClothes(count);
-
-            StartCoroutine(DelayAction());
+        isMoving=false;
+        StartCoroutine(DelayAction());
     }
 
         //선택한 옷 하단에 보여주기
@@ -90,7 +98,7 @@ public class Pointer : MonoBehaviour
     }
 
     void Update()
-    {
+    {   
         // 오브젝트가 이동 중일 때만 좌우로 움직임
          if (isMoving)
         {
