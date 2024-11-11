@@ -41,39 +41,38 @@ public class ScoreShow : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Start()
     {
-        yield return Delay();
+        SoundManager.Instance.PlaySFX(SoundManager.ESFX.TIMPANI);
         yield return Delay();
 
         int[] clothesSet = GameManager.Instance.getCurrentClothesSet();
         int num = FindNum(clothesSet);
         switch (num) { 
             case 0:
-                yield return StartCoroutine(IncrementScore(100));
-                break;
-
             case 1:
-                yield return StartCoroutine(IncrementScore(100));
-                break;
             case 2:
-                yield return StartCoroutine(IncrementScore(100));
-                break;
             case 3:
-                yield return StartCoroutine(IncrementScore(100));
-                break;
             case 4:
                 yield return StartCoroutine(IncrementScore(100));
+                SoundManager.Instance.PlaySFX(SoundManager.ESFX.FANFARE);
+                yield return Delay();
                 break;
 
-            case 5: //1°³¸¸ ¸ÂÀ» °æ¿ì
+            case 5: //1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
                 StartCoroutine(IncrementScore(20));
+                SoundManager.Instance.PlaySFX(SoundManager.ESFX.FANFARE);
+                yield return Delay();
                 break;
 
-            case 6: //2°³ ¸ÂÀ» °æ¿ì
+            case 6: //2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
                 StartCoroutine(IncrementScore(50));
+                SoundManager.Instance.PlaySFX(SoundManager.ESFX.FANFARE);
+                yield return Delay();
                 break;
 
-            case 7: //3°³ ¸ÂÀ» °æ¿ì
+            case 7: //3ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
                 StartCoroutine(IncrementScore(80));
+                SoundManager.Instance.PlaySFX(SoundManager.ESFX.FANFARE);
+                yield return Delay();
                 break;
         }
         
