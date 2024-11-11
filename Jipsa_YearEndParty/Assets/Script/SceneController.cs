@@ -7,8 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    public GameObject Image;
-
+    public Image Black;
     public GameObject Image1; //스탠딩1
     public GameObject Image2; //스탠딩2
 
@@ -29,9 +28,12 @@ public class SceneController : MonoBehaviour
     public GameObject Stamp3;
     public GameObject Stamp4;
 
+    public float fadeDuration = 2.0f;
+
     void Start()
     {
-        Image.SetActive(false);
+        Black.gameObject.SetActive(true);
+
         Image1.SetActive(false);
         Image2.SetActive(false);
         ImageProfessor.SetActive(false);
@@ -50,7 +52,12 @@ public class SceneController : MonoBehaviour
 
         Button.SetActive(false);
 
-        Invoke("ShowResultWrapper", 5f);  //scene4�� �ε�� �� 5�� �ڿ� ȣ��
+        Color color = Black.color;
+        color.a = 1; // 불투명으로 초기화
+        Black.color = color;
+
+        StartCoroutine(FadeOut());
+        Invoke("ShowResultWrapper", 7f);  //scene4�� �ε�� �� 5�� �ڿ� ȣ��
     }
     
     void ShowResultWrapper()
@@ -62,7 +69,6 @@ public class SceneController : MonoBehaviour
 
     void ShowResult(int [] clothesSet)
     {
-        Image.SetActive(true);
         int num = FindNum(clothesSet);;
 
         switch(num)
@@ -116,7 +122,26 @@ public class SceneController : MonoBehaviour
 
 
         }
+    }
 
+    private IEnumerator FadeOut()
+    {
+        Color color = Black.color;
+        float startAlpha = color.a; // 시작 알파 값
+        float time = 0; // 경과 시간
+
+        yield return Delay();
+        // 페이드 아웃 효과
+        while (time < fadeDuration)
+        {
+            time += Time.deltaTime; // 경과 시간 증가
+            color.a = Mathf.Lerp(startAlpha, 0, time / fadeDuration); // 알파 값을 보간
+            Black.color = color;
+            yield return null; // 다음 프레임까지 대기
+        }
+
+        color.a = 0; // 최종 알파 값을 0으로 설정
+        Black.color = color; // 색상 업데이트
 
     }
 
@@ -373,35 +398,6 @@ public class SceneController : MonoBehaviour
 
     private IEnumerator Delay()
     {
-        /*float duration = 1.0f;
-        float elapsed = 0.0f;
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            float t = elapsed / duration;
-
-            Color newColor = Color.Lerp(Color.black, Color.white, t);
-            Image.GetComponent<Image>().color = newColor;
-
-            spotlight.intensity = Mathf.Lerp(0, 1.5f, t);
-
-            yield return null;
-        }
-
-        yield return new WaitForSeconds(0.5f); //0.5�� ���
-        Image1.SetActive(true);
-        Bubble1.SetActive(true);
-        React1.gameObject.SetActive(true);
-
-        yield return new WaitForSeconds(1); //0.5�� ���
-        Image2.SetActive(true);
-        Bubble2.SetActive(true);
-        React2.gameObject.SetActive(true);
-
-        yield return new WaitForSeconds(2.0f); //2�� ���
-        Button.SetActive(true); //ó������ ��ư Ȱ��ȭ*/
-
         yield return new WaitForSeconds(2f); //2초 기다리기
     }
 

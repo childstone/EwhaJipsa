@@ -498,7 +498,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554016994}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.4, y: 1.03, z: 0}
+  m_LocalPosition: {x: 2.375, y: 1.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -550,7 +550,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.2, y: 5}
+  m_Size: {x: 2.38, y: 5}
   m_EdgeRadius: 0
 --- !u!114 &554016999
 MonoBehaviour:
@@ -729,7 +729,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687573665}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.77, y: 1.03, z: 0}
+  m_LocalPosition: {x: -4.79, y: 1.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -781,7 +781,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.2, y: 5}
+  m_Size: {x: 2.4, y: 5}
   m_EdgeRadius: 0
 --- !u!114 &687573670
 MonoBehaviour:
@@ -977,7 +977,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.2, y: 5}
+  m_Size: {x: 2.385, y: 5}
   m_EdgeRadius: 0
 --- !u!114 &747868614
 MonoBehaviour:
@@ -1170,6 +1170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 25
+  isMoving: 1
+  flag: 0
   valueOfClothesSet: 0
   sceneChange: {fileID: 688579649}
   selected: {fileID: 856184945}
@@ -1725,7 +1727,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235058719}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.03, z: 0}
+  m_LocalPosition: {x: -0.01, y: 1.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1777,7 +1779,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.2, y: 5}
+  m_Size: {x: 2.38, y: 5}
   m_EdgeRadius: 0
 --- !u!114 &1235058724
 MonoBehaviour:
@@ -2391,7 +2393,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.2, y: 5}
+  m_Size: {x: 2.4, y: 5}
   m_EdgeRadius: 0
 --- !u!114 &1669132805
 MonoBehaviour:
