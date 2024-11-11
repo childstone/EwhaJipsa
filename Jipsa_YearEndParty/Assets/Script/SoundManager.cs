@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {public static SoundManager Instance { get; private set; } // 싱글턴 인스턴스
@@ -64,4 +65,12 @@ public class SoundManager : MonoBehaviour
     void Start(){
         PlayBGM(EBGM.MainBGM);
     }
+
+    void Update(){
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            if(currentSceneName=="Scene4")
+                StopBGM();
+
+    }
+
 }
