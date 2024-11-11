@@ -143,18 +143,20 @@ public class SceneController : MonoBehaviour
         color.a = 0; // 최종 알파 값을 0으로 설정
         Black.color = color; // 색상 업데이트
 
+        Black.gameObject.SetActive(false);
+
     }
 
     private IEnumerator ShowDialogue0()
     {
-        // 대사 1
+        // 말풍선사운드
         React1.text = "뭐지...?\n이 옷을 입고 나서부터...";
         Bubble1.SetActive(true);
         React1.gameObject.SetActive(true);
 
         yield return Delay(); // 대사 1 후 대기
 
-        // 대사 2
+        // 말풍선사운드
         React2.text = "계속 무언가를 찾고 있다...";
         Bubble2.SetActive(true);
         React2.gameObject.SetActive(true);
@@ -170,14 +172,14 @@ public class SceneController : MonoBehaviour
         yield return Delay();
 
 
-        // 대사 1
+        // 말풍선사운드
         React1.text = "잊어서는 안 되는 사람,";
         Bubble1.SetActive(true);
         React1.gameObject.SetActive(true);
 
         yield return Delay(); // 대사 1 후 대기
 
-        // 대사 2
+        // 말풍선사운드
         React2.text = "잊고 싶지 않은 사람.";
         Bubble2.SetActive(true);
         React2.gameObject.SetActive(true);
@@ -196,21 +198,21 @@ public class SceneController : MonoBehaviour
         React3.gameObject.SetActive(true);
         yield return Delay();
 
-        Stamp0.SetActive(true);
+        Stamp0.SetActive(true); //도장 쾅 소리
 
-        Button.SetActive(true); // 버튼 활성화
+        Button.SetActive(true); 
     }
 
     private IEnumerator ShowDialogue1()
     {
         yield return Delay();
-        // 대사 1
+        //말풍선사운드
         React1.text = "뭐지...?\n이 옷을 입고 나서부터...";
         Bubble1.SetActive(true);
         React1.gameObject.SetActive(true);
 
         yield return Delay(); // 대사 1 후 대기
-
+        //말풍선사운드
         React2.text = "계속 무언가를 찾고 있다...";
         Bubble2.SetActive(true);
         React2.gameObject.SetActive(true);
@@ -226,14 +228,14 @@ public class SceneController : MonoBehaviour
         yield return Delay();
 
 
-        // 대사 1
+        //말풍선사운드
         React1.text = "잊어서는 안 되는 것,";
         Bubble1.SetActive(true);
         React1.gameObject.SetActive(true);
 
         yield return Delay(); // 대사 1 후 대기
 
-        // 대사 2
+        // 말풍선사운드
         React2.text = "잊고 싶지 않은 것.";
         Bubble2.SetActive(true);
         React2.gameObject.SetActive(true);
@@ -241,17 +243,20 @@ public class SceneController : MonoBehaviour
         yield return Delay(); // 대사 2 후 대기
         yield return Delay();
 
+
         Bubble1.SetActive(false);
         React1.gameObject.SetActive(false);
         Bubble2.SetActive(false);
         React2.gameObject.SetActive(false);
         yield return Delay();
 
+        //말풍선사운드
         Bubble3.SetActive(true);
         React3.text = "아 빗자루 여기있다 ㅎ";
         React3.gameObject.SetActive(true);
         yield return Delay();
 
+        //도장쾅 사운드
         Stamp1.SetActive(true);
         Button.SetActive(true); // 버튼 활성화
     }
@@ -261,13 +266,14 @@ public class SceneController : MonoBehaviour
         ImageProfessor.SetActive(true);
 
         yield return Delay();
-        // 대사 1
+        // 말풍선사운드
         React1.text = "자, 수업 시작하겠습니다.";
         Bubble1.SetActive(true);
         React1.gameObject.SetActive(true);
 
         yield return Delay(); // 대사 1 후 대기
 
+        //말풍선사운드
         React2.text = "출석 코드는 여기 칠판에...";
         Bubble2.SetActive(true);
         React2.gameObject.SetActive(true);
@@ -282,14 +288,14 @@ public class SceneController : MonoBehaviour
         yield return Delay();
 
 
-        // 대사 1
+        // 말풍선사운드
         React1.text = "자네, 수업 안 듣고 어디 가는가?";
         Bubble1.SetActive(true);
         React1.gameObject.SetActive(true);
 
         yield return Delay(); // 대사 1 후 대기
 
-        //학생 대사3
+        // 말풍선사운드
         React3.text = "...";
         Bubble3.SetActive(true);
         React3.gameObject.SetActive(true);
@@ -302,11 +308,13 @@ public class SceneController : MonoBehaviour
         React3.gameObject.SetActive(false);
         yield return Delay();
 
+        // 말풍선사운드
         Bubble2.SetActive(true);
         React2.text = "자네는 F일세.";
         React2.gameObject.SetActive(true);
         yield return Delay();
 
+        //도장 쾅 사운드
         Stamp2.SetActive(true);
         Button.SetActive(true); // 버튼 활성화
     }
@@ -317,7 +325,7 @@ public class SceneController : MonoBehaviour
         Image2.SetActive(true);
 
         yield return Delay();
-        // 대사 1
+        //말풍선사운드
         React3.text = "연말파티에 가려면 돈이 필요한데...";
         Bubble3.SetActive(true);
         React3.gameObject.SetActive(true);
@@ -326,20 +334,21 @@ public class SceneController : MonoBehaviour
         Bubble3.SetActive(false);
         yield return Delay(); // 대사 1 후 대기
 
+       // 말풍선사운드
         React3.text = "한 푼만 줍쇼~...";
         Bubble3.SetActive(true);
         React3.gameObject.SetActive(true);
         yield return Delay(); // 대사 1 후 대기
+        yield return Delay(); // 대사 1 후 대기
 
-
-        // 대사 2
-
+        // 말풍선사운드
         React1.text = "아이고...";
         Bubble1.SetActive(true);
         React1.gameObject.SetActive(true);
 
         yield return Delay(); // 대사 2 후 대기
 
+        //말풍선사운드
         React2.text = "옛다.";
         Bubble2.SetActive(true);
         React2.gameObject.SetActive(true);
@@ -347,6 +356,7 @@ public class SceneController : MonoBehaviour
         yield return Delay(); // 대사 2 후 대기
         yield return Delay(); // 대사 2 후 대기
 
+        //도장 쾅 소리
         Stamp3.SetActive(true);
         Button.SetActive(true); // 버튼 활성화
     }
@@ -356,8 +366,8 @@ public class SceneController : MonoBehaviour
         Image1.SetActive(true);
         Image2.SetActive(true);
 
-        yield return Delay(); 
-        // 대사 1
+        yield return Delay();
+        //말풍선사운드
         React1.text = "오오... 전하...";
         Bubble1.SetActive(true);
         React1.gameObject.SetActive(true);
@@ -366,30 +376,36 @@ public class SceneController : MonoBehaviour
 
         Bubble1.SetActive(false);
         yield return Delay(); // 대사 1 후 대기
+        yield return Delay(); // 대사 1 후 대기
 
+        //말풍선 사운드
         React1.text = "연말 파티로 향하시어";
         Bubble1.SetActive(true);
         React1.gameObject.SetActive(true);
         yield return Delay(); // 대사 1 후 대기
 
 
-        // 대사 2
-
+        //말풍선 사운드
         React2.text = "세상에 이화의 이름을 드높여주시옵소서...";
         Bubble2.SetActive(true);
         React2.gameObject.SetActive(true);
 
         yield return Delay(); // 대사 2 후 대기
+        yield return Delay(); // 대사 2 후 대기
 
+        //말풍선 사운드
         React3.text = "암 그러도록 하지.";
         Bubble3.SetActive(true);
         React3.gameObject.SetActive(true);
 
         yield return Delay(); // 대사 2 후 대기
 
+        //말풍선 사운드
         React1.text = "만세~";
         React2.text = "만세~.";
+        yield return Delay(); // 대사 2 후 대기
 
+        //도장 쾅 사운드
         Stamp4.SetActive(true);
         Button.SetActive(true); // 버튼 활성화
     }
@@ -398,7 +414,7 @@ public class SceneController : MonoBehaviour
 
     private IEnumerator Delay()
     {
-        yield return new WaitForSeconds(2f); //2초 기다리기
+        yield return new WaitForSeconds(1f); //2초 기다리기
     }
 
 
