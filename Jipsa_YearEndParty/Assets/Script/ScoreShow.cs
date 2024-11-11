@@ -41,6 +41,9 @@ public class ScoreShow : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Start()
     {
+        yield return Delay();
+        yield return Delay();
+
         int[] clothesSet = GameManager.Instance.getCurrentClothesSet();
         int num = FindNum(clothesSet);
         switch (num) { 
@@ -98,6 +101,7 @@ public class ScoreShow : MonoBehaviour
     {
         scoreText.text = score.ToString();
     }
+
 
 
 }
