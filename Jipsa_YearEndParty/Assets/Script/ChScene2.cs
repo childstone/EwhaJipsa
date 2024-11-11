@@ -19,4 +19,11 @@ public class ChScene2 : MonoBehaviour
         S2UI.SetActive(true);
         isUIActive=true;
     }
+
+    void Update(){
+        if(isUIActive)
+            if(Input.GetMouseButtonDown(0)){
+                S2UI.SetActive(false);
+            }
+    }
 }

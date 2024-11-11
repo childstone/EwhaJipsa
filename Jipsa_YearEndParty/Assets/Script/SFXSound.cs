@@ -5,6 +5,10 @@ using UnityEngine.UI;
 public class SFXSound : MonoBehaviour
 {
 
+    void Start(){
+        SoundManager.Instance.PlayBGM(SoundManager.EBGM.MainBGM);
+    }
+
       // 버튼 클릭 시 호출될 메서드
     public void OnClick()
     {

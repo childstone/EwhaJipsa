@@ -8,7 +8,6 @@ public class FlowManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject Endings;
     public GameObject GetDressed;
     public GameObject defaultMan;
 
@@ -16,7 +15,6 @@ public class FlowManager : MonoBehaviour
     void Awake()
     {
         //모든 오브젝트 비활성화
-        Endings.SetActive(false);
         GetDressed.SetActive(false);
         defaultMan.SetActive(false);
     }
@@ -37,8 +35,5 @@ public class FlowManager : MonoBehaviour
 
         // GetDressed 작업 완료 후 대기 (여기서는 1초 대기)
         yield return new WaitForSeconds(1f); // 이 부분은 실제로 비동기 작업이 끝날 때까지 대기할 수 있습니다.
-
-        Endings.SetActive(true);
-        // 그 이후 순서들 ... 
     }
 }

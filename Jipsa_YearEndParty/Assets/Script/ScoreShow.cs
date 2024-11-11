@@ -53,25 +53,21 @@ public class ScoreShow : MonoBehaviour
             case 3:
             case 4:
                 yield return StartCoroutine(IncrementScore(100));
-                SoundManager.Instance.PlaySFX(SoundManager.ESFX.FANFARE);
                 yield return Delay();
                 break;
 
             case 5: //1���� ���� ���
                 StartCoroutine(IncrementScore(20));
-                SoundManager.Instance.PlaySFX(SoundManager.ESFX.FANFARE);
                 yield return Delay();
                 break;
 
             case 6: //2�� ���� ���
                 StartCoroutine(IncrementScore(50));
-                SoundManager.Instance.PlaySFX(SoundManager.ESFX.FANFARE);
                 yield return Delay();
                 break;
 
             case 7: //3�� ���� ���
                 StartCoroutine(IncrementScore(80));
-                SoundManager.Instance.PlaySFX(SoundManager.ESFX.FANFARE);
                 yield return Delay();
                 break;
         }
@@ -87,7 +83,7 @@ public class ScoreShow : MonoBehaviour
             UpdateScoreText();
             yield return new WaitForSeconds(0.02f);
         }
-        
+        SoundManager.Instance.PlaySFX(SoundManager.ESFX.FANFARE);
     }
 
     IEnumerator Delay()

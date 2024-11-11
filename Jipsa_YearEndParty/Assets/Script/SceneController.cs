@@ -29,11 +29,9 @@ public class SceneController : MonoBehaviour
     public GameObject Stamp4;
 
     public float fadeDuration = 2.0f;
+    
 
-    void Start()
-    {
-        Black.gameObject.SetActive(true);
-
+    void Start(){
         Image1.SetActive(false);
         Image2.SetActive(false);
         ImageProfessor.SetActive(false);
@@ -52,14 +50,17 @@ public class SceneController : MonoBehaviour
 
         Button.SetActive(false);
 
+        Black.gameObject.SetActive(true);
+
         Color color = Black.color;
         color.a = 1; // 불투명으로 초기화
         Black.color = color;
 
         StartCoroutine(FadeOut());
         Invoke("ShowResultWrapper", 7f);  //scene4�� �ε�� �� 5�� �ڿ� ȣ��
+
     }
-    
+
     void ShowResultWrapper()
     {
          //ClothesSet load from GameManager
@@ -129,6 +130,7 @@ public class SceneController : MonoBehaviour
 
     private IEnumerator FadeOut()
     {
+        Debug.Log("실행");
         Color color = Black.color;
         float startAlpha = color.a; // 시작 알파 값
         float time = 0; // 경과 시간
