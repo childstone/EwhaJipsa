@@ -109,11 +109,11 @@ public class Pointer : MonoBehaviour
             transform.Translate(move, 0, 0);
 
             // x 좌표가 -10보다 작으면 오른쪽으로, 10보다 크면 왼쪽으로 방향 전환
-            if (transform.position.x >= 6f)
+            if (transform.position.x >= 5.7f)
             {
                 direction = -1; // 왼쪽으로 방향 전환
             }
-            else if (transform.position.x <= -6f)
+            else if (transform.position.x <= -5.7f)
             {
                 direction = 1; // 오른쪽으로 방향 전환
             }
