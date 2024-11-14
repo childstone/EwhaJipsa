@@ -1133,7 +1133,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC774 \uACF3\uC744 \uD074\uB9AD..."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9cc83eb999ccfee4d94b6cadc0ea1edb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e75e26b1175b014ab80dafc48f6ffaa, type: 2}
   m_sharedMaterial: {fileID: 6381443223806524441, guid: 9cc83eb999ccfee4d94b6cadc0ea1edb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1197,7 +1197,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1199289340
