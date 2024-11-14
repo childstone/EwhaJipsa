@@ -94,7 +94,7 @@ public class SceneController : MonoBehaviour
                 break;
 
             case 5:
-                React1.text = "이러고 나갈 순 없어...";
+                React1.text = "이러고\n나갈 순\n없어...";
                 Bubble1.SetActive(true);
                 SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
                 React1.gameObject.SetActive(true);
@@ -102,7 +102,7 @@ public class SceneController : MonoBehaviour
                 break;
 
             case 6:
-                React1.text = "조금 애매하네...";
+                React1.text = "조금\n애매하네...";
                 Bubble1.SetActive(true);
                 SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
                 React1.gameObject.SetActive(true);
@@ -110,7 +110,7 @@ public class SceneController : MonoBehaviour
                 break;
 
             case 7:
-                React1.text = "조금 더 신경쓰면 괜찮을 것 같아.";
+                React1.text = "조금 더\n신경쓰면\n괜찮을 것\n같아.";
                 Bubble1.SetActive(true);
                 SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
                 React1.gameObject.SetActive(true);
@@ -155,7 +155,7 @@ public class SceneController : MonoBehaviour
     private IEnumerator ShowDialogue0()
     {
         // 말풍선사운드
-        React1.text = "뭐지...?\n이 옷을 입고 나서부터...";
+        React1.text = "뭐지...?\n이 옷을 입고\n나서부터...";
         SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
         Bubble1.SetActive(true);
         React1.gameObject.SetActive(true);
@@ -163,7 +163,7 @@ public class SceneController : MonoBehaviour
         yield return Delay(); // 대사 1 후 대기
 
         // 말풍선사운드
-        React2.text = "계속 무언가를 찾고 있다...";
+        React2.text = "계속\n무언가를\n찾고\n있다...";
         SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
         Bubble2.SetActive(true);
         React2.gameObject.SetActive(true);
@@ -180,7 +180,7 @@ public class SceneController : MonoBehaviour
 
 
         // 말풍선사운드
-        React1.text = "잊어서는 안 되는 사람,";
+        React1.text = "잊어서는\n안 되는\n사람,";
         SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
         Bubble1.SetActive(true);
         React1.gameObject.SetActive(true);
@@ -188,7 +188,7 @@ public class SceneController : MonoBehaviour
         yield return Delay(); // 대사 1 후 대기
 
         // 말풍선사운드
-        React2.text = "잊고 싶지 않은 사람.";
+        React2.text = "잊고 싶지\n않은 사람.";
         SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
         Bubble2.SetActive(true);
         React2.gameObject.SetActive(true);
@@ -203,7 +203,7 @@ public class SceneController : MonoBehaviour
         yield return Delay();
 
         Bubble3.SetActive(true);
-        React3.text = "아가씨, 당신의 이름은?";
+        React3.text = "아가씨,\n당신의\n이름은?";
         SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
         React3.gameObject.SetActive(true);
         yield return Delay();
@@ -216,16 +216,15 @@ public class SceneController : MonoBehaviour
 
     private IEnumerator ShowDialogue1()
     {
-        yield return Delay();
         //말풍선사운드
-        React1.text = "뭐지...?\n이 옷을 입고 나서부터...";
+        React1.text = "뭐지...?\n이 옷을 입고\n나서부터...";
         SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
         Bubble1.SetActive(true);
         React1.gameObject.SetActive(true);
-
         yield return Delay(); // 대사 1 후 대기
+
         //말풍선사운드
-        React2.text = "계속 무언가를 찾고 있다...";
+        React2.text = "계속\n무언가를\n찾고\n있다...";
         SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
         Bubble2.SetActive(true);
         React2.gameObject.SetActive(true);
@@ -242,7 +241,7 @@ public class SceneController : MonoBehaviour
 
 
         //말풍선사운드
-        React1.text = "잊어서는 안 되는 것,";
+        React1.text = "잊어서는\n안 되는 것,";
         SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
         Bubble1.SetActive(true);
         React1.gameObject.SetActive(true);
@@ -250,7 +249,7 @@ public class SceneController : MonoBehaviour
         yield return Delay(); // 대사 1 후 대기
 
         // 말풍선사운드
-        React2.text = "잊고 싶지 않은 것.";
+        React2.text = "잊고 싶지\n않은 것.";
         SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
         Bubble2.SetActive(true);
         React2.gameObject.SetActive(true);
@@ -267,7 +266,7 @@ public class SceneController : MonoBehaviour
 
         //말풍선사운드
         Bubble3.SetActive(true);
-        React3.text = "아 빗자루 여기있다 ㅎ";
+        React3.text = "아 빗자루\n여기있다\nㅎ";
         SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
         React3.gameObject.SetActive(true);
         yield return Delay();
@@ -282,9 +281,8 @@ public class SceneController : MonoBehaviour
     {
         ImageProfessor.SetActive(true);
 
-        yield return Delay();
         // 말풍선사운드
-        React1.text = "자, 수업 시작하겠습니다.";
+        React1.text = "자,\n수업 시작\n하겠습니다.";
         SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
         Bubble1.SetActive(true);
         React1.gameObject.SetActive(true);
@@ -292,11 +290,12 @@ public class SceneController : MonoBehaviour
         yield return Delay(); // 대사 1 후 대기
 
         //말풍선사운드
-        React2.text = "출석 코드는 여기 칠판에...";
+        React2.text = "출석 코드는\n여기\n칠판에...";
         SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
         Bubble2.SetActive(true);
         React2.gameObject.SetActive(true);
 
+        yield return Delay(); // 대사 1 후 대기
         yield return Delay(); // 대사 2 후 대기
 
         Bubble1.SetActive(false);
@@ -308,7 +307,7 @@ public class SceneController : MonoBehaviour
 
 
         // 말풍선사운드
-        React1.text = "자네, 수업 안 듣고 어디 가는가?";
+        React1.text = "자네,\n수업 안 듣고\n어디\n가는가?";
         SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
         Bubble1.SetActive(true);
         React1.gameObject.SetActive(true);
@@ -322,6 +321,7 @@ public class SceneController : MonoBehaviour
         React3.gameObject.SetActive(true);
 
         yield return Delay(); // 대사 2 후 대기
+        yield return Delay(); // 대사 1 후 대기
 
         Bubble1.SetActive(false);
         React1.gameObject.SetActive(false);
@@ -331,7 +331,7 @@ public class SceneController : MonoBehaviour
 
         // 말풍선사운드
         Bubble2.SetActive(true);
-        React2.text = "자네는 F일세.";
+        React2.text = "자네는\nF일세.";
         SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
         React2.gameObject.SetActive(true);
         yield return Delay();
@@ -347,23 +347,22 @@ public class SceneController : MonoBehaviour
         Image1.SetActive(true);
         Image2.SetActive(true);
 
-        yield return Delay();
         //말풍선사운드
-        React3.text = "연말파티에 가려면 돈이 필요한데...";
+        React3.text = "연말파티에\n가려면\n돈이\n필요한데...";
         SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
         Bubble3.SetActive(true);
         React3.gameObject.SetActive(true);
+        yield return Delay(); // 대사 1 후 대기
         yield return Delay(); // 대사 1 후 대기
 
         Bubble3.SetActive(false);
         yield return Delay(); // 대사 1 후 대기
 
        // 말풍선사운드
-        React3.text = "한 푼만 줍쇼~...";
+        React3.text = "한 푼만\n줍쇼~...";
         SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
         Bubble3.SetActive(true);
         React3.gameObject.SetActive(true);
-        yield return Delay(); // 대사 1 후 대기
         yield return Delay(); // 대사 1 후 대기
 
         // 말풍선사운드
@@ -394,29 +393,27 @@ public class SceneController : MonoBehaviour
         Image1.SetActive(true);
         Image2.SetActive(true);
 
-        yield return Delay();
         //말풍선사운드
-        React1.text = "오오... 전하...";
+        React1.text = "오오...\n전하...";
         SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
         Bubble1.SetActive(true);
         React1.gameObject.SetActive(true);
 
+        yield return Delay(); // 대사 1 후 대기
         yield return Delay(); // 대사 1 후 대기
 
         Bubble1.SetActive(false);
         yield return Delay(); // 대사 1 후 대기
-        yield return Delay(); // 대사 1 후 대기
 
         //말풍선 사운드
-        React1.text = "연말 파티로 향하시어";
+        React1.text = "연말 파티로\n향하시어";
         SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
         Bubble1.SetActive(true);
         React1.gameObject.SetActive(true);
         yield return Delay(); // 대사 1 후 대기
 
-
         //말풍선 사운드
-        React2.text = "세상에 이화의 이름을 드높여주시옵소서...";
+        React2.text = "세상에\n이화의\n이름을\n드높여주시옵소서...";
         SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
         Bubble2.SetActive(true);
         React2.gameObject.SetActive(true);
@@ -425,7 +422,7 @@ public class SceneController : MonoBehaviour
         yield return Delay(); // 대사 2 후 대기
 
         //말풍선 사운드
-        React3.text = "암 그러도록 하지.";
+        React3.text = "암\n그러도록\n하지.";
         SoundManager.Instance.PlaySFX(SoundManager.ESFX.BUBBLE);
         Bubble3.SetActive(true);
         React3.gameObject.SetActive(true);
